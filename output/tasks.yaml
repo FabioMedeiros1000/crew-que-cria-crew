@@ -1,0 +1,49 @@
+pesquisa_de_conteudos:
+  description: >
+    Pesquisa de conteúdos relevantes em Python, considerando diferentes níveis de experiência (iniciante, intermediário, avançado).
+    Identificação de tendências e tecnologias atuais em programação Python.
+    Coleta de informações de diversas fontes (sites, livros, artigos acadêmicos, etc.).
+    Análise da relevância e qualidade das informações encontradas.
+    Geração de um relatório contendo as fontes e informações relevantes para a próxima etapa.
+  expected_output: Relatório contendo fontes e informações relevantes sobre Python.
+  agent: pesquisador
+
+analise_de_topicos:
+  description: >
+    Análise do relatório gerado pelo Agente de Pesquisa.
+    Identificação de tópicos-chave e subtópicos relevantes para um curso em Python.
+    Organização dos tópicos em uma estrutura lógica e coerente.
+    Definição da sequência ideal de apresentação dos tópicos.
+    Geração de um documento contendo a estrutura do curso com todos os tópicos definidos.
+  expected_output: Documento com a estrutura do curso em Python, incluindo tópicos e subtópicos.
+  agent: analista_de_conteudo
+
+definicao_de_escopo:
+  description: >
+    Análise do documento gerado pelo Agente de Tópicos.
+    Definição do escopo do curso, incluindo objetivos de aprendizagem, público-alvo, duração, recursos necessários e cronograma.
+    Aprovação ou solicitação de ajustes no escopo do curso.
+    Gerenciamento de recursos e prazos para a criação do conteúdo.
+  expected_output: Documento com o escopo definido e aprovado do curso em Python.
+  agent: gerente_de_projeto
+
+redacao_do_curso:
+  description: >
+    Redação do conteúdo do curso com base na estrutura e escopo definidos.
+    Desenvolvimento de exemplos de código, exercícios e atividades práticas.
+    Utilização de linguagem clara, concisa e acessível ao público-alvo.
+    Garantia da precisão técnica do conteúdo.
+    Geração da apostila do curso em formato editável (ex: .docx ou .md).
+  expected_output: Apostila do curso em Python em formato editável (.docx ou .md).
+  agent: redator
+
+revisao_do_curso:
+  description: >
+    Revisão da apostila gerada pelo Agente de Redação.
+    Verificação da clareza, coerência e precisão do conteúdo.
+    Identificação e correção de erros gramaticais, ortográficos e de estilo.
+    Avaliação da qualidade do código e dos exemplos.
+    Sugestões de melhorias no conteúdo e na estrutura.
+    Geração de um relatório com as revisões e sugestões de melhorias.
+  expected_output: Relatório de revisão com sugestões de melhorias para a apostila do curso.
+  agent: editor
