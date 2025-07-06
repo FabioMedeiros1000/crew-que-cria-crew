@@ -14,8 +14,6 @@ O projeto gera automaticamente três arquivos principais:
 
 Tudo isso é baseado em um **tema informado pelo usuário** no arquivo `main.py`.
 
----
-
 ## Objetivo
 
 Automatizar o processo inicial de criação de uma crew no CrewAI, tornando mais fácil:
