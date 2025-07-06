@@ -1,54 +1,59 @@
-# ProjetoParaProducao Crew
+# CrewAI Auto Setup
 
-Welcome to the ProjetoParaProducao Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+Este projeto tem como objetivo **automatizar a criação de arquivos essenciais para o funcionamento de uma crew no CrewAI**, a partir de um tema definido pelo usuário.
 
-## Installation
+---
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+## Visão Geral
 
-First, if you haven't already, install uv:
+O projeto gera automaticamente três arquivos principais:
+
+- `agents.yaml` – Define os agentes, suas funções (roles), metas (goals) e histórias (backstory).
+- `tasks.yaml` – Lista as tarefas que serão atribuídas aos agentes.
+- `crew.py` – Cria a estrutura da crew, importando os agentes e tarefas definidos.
+
+Tudo isso é baseado em um **tema informado pelo usuário** no arquivo `main.py`.
+
+---
+
+## Objetivo
+
+Automatizar o processo inicial de criação de uma crew no CrewAI, tornando mais fácil:
+
+- Prototipar ideias.
+- Criar soluções orientadas a agentes com maior agilidade.
+- Focar no conteúdo dos agentes e suas interações, ao invés de configurar manualmente os arquivos repetitivos.
+
+---
+
+## Como Funciona
+
+1. Usuário define o tema no main.py (ex: "sustentabilidade", "educação em IA", "startup financeira").
+2. O sistema utiliza esse tema para gerar dinamicamente os arquivos:
+  - Cada agente terá um papel relevante ao tema.
+  - As tarefas serão distribuídas entre os agentes com foco na resolução do problema.
+  - O crew.py importará tudo e instanciará a crew com base nesses dados.
+
+## Tecnologias Utilizadas
+
+- Python 3.10+
+- CrewAI
+- YAML
+- Funções LLM-based (dependendo de como você gera os arquivos)
+
+## Exemplo de Uso
+
+- No main.py, defina o tema:
+- Ao executar:
 
 ```bash
-pip install uv
+python main.py
 ```
 
-Next, navigate to your project directory and install the dependencies:
+Serão gerados os arquivos:
+- agents.yaml com especialistas em IA, educação e políticas públicas.
+- tasks.yaml com tarefas como: pesquisar soluções, montar plano de ação, simular cenários.
+- crew.py com tudo montado para execução da crew.
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
-
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/projeto_para_producao/config/agents.yaml` to define your agents
-- Modify `src/projeto_para_producao/config/tasks.yaml` to define your tasks
-- Modify `src/projeto_para_producao/crew.py` to add your own logic, tools and specific args
-- Modify `src/projeto_para_producao/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
-```bash
-$ crewai run
-```
-
-This command initializes the projeto_para_producao Crew, assembling the agents and assigning them tasks as defined in your configuration.
-
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
-
-## Understanding Your Crew
-
-The projeto_para_producao Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
-
-## Support
-
-For support, questions, or feedback regarding the ProjetoParaProducao Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
+## Testes
+Você pode testar a funcionalidade alterando o tema no main.py e verificando os arquivos gerados.
